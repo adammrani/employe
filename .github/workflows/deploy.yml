@@ -13,3 +13,5 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Build & Test
+        run:  mvn clean verify sonar:sonar -Dsonar.token=${{ secrets.SONAR_TOKEN }}
